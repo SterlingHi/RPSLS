@@ -1,20 +1,14 @@
-class Player:
-    def __init__(self):
-        self.name = " "
-        self.choice = ""
-        self.score = 0
-        self.gestures = ["rock", "paper", "scissors", "lizard", "spock"]
+import random
 
-    def choice(self):
-        pass
+
+
 
 
 class Human(Player):
     pass
 
-
-class AI(Player):
-    pass
+    class AI(Player):
+        choice = random.randint(1, 3)
 
 
 class Game:
@@ -26,12 +20,11 @@ class Game:
         pass
 
     def choose_mode(self):
-        print("single or mulit?")
-        
+        print("single or multi?")
+
         response = input()
         if response == 2:
             self.player_one = Human()
         else:
             response == 1
             self.player_two = AI()
-
