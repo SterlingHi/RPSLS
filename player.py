@@ -17,6 +17,10 @@ class Player:
             self.choice = "paper"
         elif pick == 3:
             self.choice = "scissors"
+        elif pick == 4:
+            self.choice = "lizard"
+        elif pick == 5:
+            self.choice = "spock"
 
 
 Player()
