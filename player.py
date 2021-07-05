@@ -6,21 +6,14 @@ class Player:
         self.gestures = ["rock", "paper", "scissors", "lizard", "spock"]
 
     def player_choice(self):
-        pick = int(input("What is your choice user?: "))
-        if pick == 3:
-            print("not a valid number, please try again")
-        elif pick < 1:
-            print("not a valid number, please try again")
-        elif pick == 1:
-            self.choice = "rock"
-        elif pick == 2:
-            self.choice = "paper"
-        elif pick == 3:
-            self.choice = "scissors"
-        elif pick == 4:
-            self.choice = "lizard"
-        elif pick == 5:
-            self.choice = "spock"
 
-
-Player()
+        gesture_index = 0
+        for gesture in self.gestures:
+            print(f"Press {gesture_index} for {gesture}.")
+            gesture_index += 1
+        self.choice = input("Choose your gesture.")
+        if int(self.choice) > 4:
+            print("Sorry, choose zero through four.")
+            self.choice()
+        self.choice = self.gestures[int(self.choice)]
+        return self.choice
